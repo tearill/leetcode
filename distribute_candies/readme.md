@@ -1,3 +1,5 @@
+- leetcode👉https://leetcode-cn.com/problems/distribute-candies/
+
 - even 偶数 平均分，前提
 - 每种数字代表不同的类型
 - 最大的种类数量
