@@ -7,7 +7,7 @@ class ListNode:
             return "{}-{}".format(self.val, repr(self.next))
 
 class Solution:
-    def partition(self, head, x):
+    def partition(self, head:ListNode, x:int) -> ListNode:
         dummySmaller, dummyGreater = ListNode(-1), ListNode(-1)
         smaller, greater = dummySmaller, dummyGreater
         while head:
