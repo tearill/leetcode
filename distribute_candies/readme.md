@@ -1,3 +1,4 @@
+# 分糖果
 - leetcode👉https://leetcode-cn.com/problems/distribute-candies/
 
 - even 偶数 平均分，前提
