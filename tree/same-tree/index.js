@@ -39,4 +39,4 @@ var isSameTree = function(p, q) {
   return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
 }
 
-console.log(isSameTree(p, q))
+console.log(isSameTree(p, q))   
