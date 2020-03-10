@@ -43,7 +43,7 @@ var preorderTraversal = function (root) {
     return result;
 }
 
-console.log(preorderTraversal(a1));
+// console.log(preorderTraversal(a1));
 
 
 // 中序遍历
@@ -65,7 +65,7 @@ var inorderTraversal = function (root) {
     return result;
 }
 
-console.log(inorderTraversal(a1));
+// console.log(inorderTraversal(a1));
 
 // 后序遍历
 var postorderTraversal = function (root) {
@@ -85,4 +85,10 @@ var postorderTraversal = function (root) {
     return result.reverse();
 }
 
-console.log(postorderTraversal(a1));
+// console.log(postorderTraversal(a1));
+
+module.exports = {
+    preorderTraversal,
+    inorderTraversal,
+    postorderTraversal
+}
