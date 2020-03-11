@@ -20,10 +20,11 @@ a3.right = a5
  * @return {number[][]}
  */
 
+// DFS 深度优先法
 var levelOrder = function(root) {
-  if (!root) return // 树为空时直接返回
-    let result = [] // 结果数组
-    function walk(node, level) { // 辅助函数遍历每一层的结点
+  let result = [] // 结果数组
+  if (!root) return result // 树为空时直接返回
+  function walk(node, level) { // 辅助函数遍历每一层的结点
     if(result.length === level) {
       result.push([]) // 初始化定型每一层的数组
     }
