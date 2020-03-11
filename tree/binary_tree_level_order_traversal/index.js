@@ -27,7 +27,7 @@ var levelOrder = function(root) {
     if(result.length === level) {
       result.push([]) // 初始化定型每一层的数组
     }
-  result[level].push(node.val) // 每一层都是一个数组
+    result[level].push(node.val) // 每一层都是一个数组
     if(node.left) {
       walk(node.left, level + 1) // 访问左结点下一层
     }
