@@ -6,7 +6,7 @@
 var minEatingSpeed = function(piles, H) {
   const canEat = function(piles, H, mid) {
     let h = 0
-    for (let i = 0; i < piles.length; j++) {
+    for (let i = 0; i < piles.length; i++) {
       h += Math.ceil(piles[i] / mid)
     }
     return h <= H
