@@ -7,10 +7,14 @@ leetcode👉https://leetcode-cn.com/problems/the-masseuse-lcci/
   动态规划解题  
 
 - 分析：  
-  1. n = 1, `F(1) = nums[1]  `
+  1. n = 1, `F(1) = nums[1]`  
   2. n = 2, `F(2) = Math.max(nums[1], nums[2])`  
   3. n = 3, 两种选择：  
       a. 接第三个人，同时接了第一个人，`F(3) = F(1) + nums[3]`  
-      b. 不接第三个人，保持 `Math.max(nums[1], nums[2])`，这时 `F(3) = max(nums[1], num2[2])`  
+      b. 不接第三个人，保持 `Math.max(nums[1], nums[2])`，这时 `F(3) = Math.max(nums[1], nums[2])`  
 
-  F(n) = Math.max(F(n-1), F(n-2) + nums[i])
+  F(n) = Math.max(F(n-1), F(n-2) + nums[i])  
+
+- 优化  
+  只需要保存F(n-1) 和 F(n-2)用来计算，其余的不需要保存  
+  
