@@ -3,7 +3,7 @@
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-  if (nums.length === 2) return nums[0] * nums[1]
+  if (nums.length === 2) return [nums[1], nums[0]]
   let res = []
   for (let i = 0; i < nums.length; i++) {
     let arr = nums.filter((item, index) => index != i)
