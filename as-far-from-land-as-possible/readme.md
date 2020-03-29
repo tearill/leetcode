@@ -18,3 +18,5 @@ leetcode👉https://leetcode-cn.com/problems/as-far-from-land-as-possible/
 
 - 分析  
   求每个海洋到陆地的距离，所有距离的最大值就是结果  
+  求每一个海洋区域跟所有陆地的最小距离  
+  然后在所有最小距离中求最大距离，就是所有海洋离陆地最远的距离  
