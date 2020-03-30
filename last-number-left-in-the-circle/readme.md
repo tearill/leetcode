@@ -17,5 +17,5 @@ leetcode👉https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-d
 
 - 每次删除圆圈中第 m 个数字  
   每次删除之后新一轮的头节点都是从后面固定向前移动 m 个位置得到的  
-  反推每一轮中最后剩下的那个数字在数组中的位置 -> (当前 index + m) % 上一轮剩下的数字个数  
-   
+  反推每一轮中最后剩下的那个数字在数组中的位置 -> (当前 index + m) % (上一轮中剩下的数字个数)  
+  
