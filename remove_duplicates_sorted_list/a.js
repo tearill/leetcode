@@ -9,7 +9,7 @@ var removeDuplicates = function(nums) {
         // console.log(nums[fastP]);
         if(nums[fastP] !== nums[slowP]) { // 从同一个位置0开始
             slowP++; // 不一样的情况下
-            // slowP 挪窝了，说明有新的位置要确立心的数，cur指向的数
+            // slowP 挪窝了，说明有新的位置要确立新的数，cur 指向的数
             nums[slowP] = nums[fastP]; // 设置每个位置，不重复的数
         }
     }
