@@ -1,5 +1,5 @@
 # 翻转字符串里的单词 & 面试题58 - I. 翻转单词顺序
-- leetcode👉https://leetcode-cn.com/problems/reverse-words-in-a-string/
+- leetcode👉https://leetcode-cn.com/problems/reverse-words-in-a-string/  
 - leetcode👉https://leetcode-cn.com/problems/fan-zhuan-dan-ci-shun-xu-lcof  
 
 - 给定一个字符串，逐个翻转字符串中的每个单词。
@@ -7,6 +7,15 @@
 - 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
 - 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
 
-1. trim() 去除字符串前后的空格  
-2. split(/\s+/) 转成数组，reverse() 翻转
-3. join(' ') 使用空格拼接成字符串  
+- 方法一：
+  使用内置 API 函数  
+  1. trim() 去除字符串前后的空格  
+  2. split(/\s+/) 转成数组，reverse() 翻转
+  3. join(' ') 使用空格拼接成字符串  
+
+- 方法二：  
+  不使用 API 函数，使用双指针  
+  1. 快慢指针指向数组的末尾  
+  2. 快指针逆序向前走，确定单词的左边界，确定好后快慢指针之间的就是一个单词，放进结果数组  
+  3. 快指针遇到空格，连续跳过空格，然后将慢指针移到快指针的位置，进行下一个单词边界的确定  
+  4. 循环以上过程  
