@@ -9,3 +9,7 @@ leetcode👉https://leetcode-cn.com/problems/add-two-numbers-ii/
 
 - 分析  
   思路：逆序相加，并且在相加的同时处理加法的进位  
+
+1. 逆序 -> 使用栈的入栈和出栈实现  
+2. 处理进位 val / 10 | 0  
+3. 创建相应的节点并放置到 res 中  
