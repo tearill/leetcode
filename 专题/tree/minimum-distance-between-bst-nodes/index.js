@@ -26,20 +26,34 @@ n2.right = n5;
 var minDiffInBST = function(root) {
   // if (!root || !root.next) return;
   let arr = [];
+  // const traversal = root => {
+  //   if (!root) return; // 递归终止
+  //   arr.push(root.val);
+  //   traversal(root.left);
+  //   traversal(root.right);
+  // }
   const traversal = root => {
-    if (!root) return; // 递归终止
-    arr.push(root.val);
-    traversal(root.left);
-    traversal(root.right);
+    let stack = [],
+      cur = root;
+    while(stack.length || cur != null) {
+      if (cur != null) {
+        arr.push(cur.val);
+        stack.push(cur);
+        cur = cur.left;
+      } else {
+        cur = stack.pop();
+        cur = cur.right;
+      }
+    }
   }
   traversal(root);
-  console.log(arr);
-  // arr.sort((a, b) => a - b);
-  // let min = Number.MAX_SAFE_INTEGER;
-  // for (let i = 0, len = arr.length - 1; i < len; i++) {
-  //   min = Math.min(min, arr[i+1] - arr[i]);
-  // }
-  // return min;
+  // console.log(arr);
+  arr.sort((a, b) => a - b);
+  let min = Number.MAX_SAFE_INTEGER;
+  for (let i = 0, len = arr.length - 1; i < len; i++) {
+    min = Math.min(min, arr[i+1] - arr[i]);
+  }
+  return min;
 };
 
 console.log(minDiffInBST(n1));
