@@ -9,3 +9,7 @@ leetcode👉https://leetcode-cn.com/problems/middle-of-the-linked-list/
   把链表转换成数组，取数组的中间项  
   注意：不能只是单纯的保存链表的值，要保存链表的指针指向  
   
+- 双指针法  
+  设置快慢指针 slowP 和 fastP  
+  快指针每次向后移动两个位置，慢指针每次向后移动一个位置  
+  当快指针移动到链表末尾的时候，慢指针一定是移动到了链表的中间位置
