@@ -2,8 +2,8 @@
 function maxSubArray(nums) {
     var max = -Number.MAX_VALUE;
     var sum = 0;
-    for(let num of nums) {
-        if(sum < 0) { // 加了跟没加一样
+    for (let num of nums) {
+        if (sum < 0) { // 加了跟没加一样
             sum = 0;
         }
         sum += num;
@@ -12,5 +12,6 @@ function maxSubArray(nums) {
         // 不管最大子和是多少，他都是一次for循环
     }
     return max;
-} 
+}
+
 console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
