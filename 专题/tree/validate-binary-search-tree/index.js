@@ -27,6 +27,7 @@ p3.right = p5
 
 var isValidBST = function(root) {
   let inorderList = []
+  // 中序遍历
   const inorderTraversal = function(root) {
     let stack = [],
         cur = root
@@ -42,6 +43,7 @@ var isValidBST = function(root) {
     }
   }
   inorderTraversal(root)
+  // 判断是否是单调递增数组
   for (let i = 0; i < inorderList.length; i++) {
     if(inorderList[i] >= inorderList[i+1]) return false
   }

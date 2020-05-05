@@ -23,10 +23,11 @@ p3.right = p5
 var isValidBST = function(root) {
   let prev = null
   const help = (node) => {
+    // 排除不符合的情况
     if(node === null) return true
     if(!help(node.left)) return false
-    if(prev !== null && prev >= node.val) return false
-    prev = node.val
+    if(prev !== null && prev >= node.val) return false // 如果前一个节点大于下一节点
+    prev = node.val // 保存前一个节点的值
     return help(node.right)
   }
   return help(root)

@@ -23,10 +23,8 @@ p3.right = p5
 var isValidBST = function(root) {
   if(root === null) return true // 树为空，直接返回 true
   let stack = [root]
-  let min = Number.MIN_SAFE_INTEGER
-  let max = Number.MAX_SAFE_INTEGER
-  root.max = max
-  root.min = min
+  root.max = Number.MAX_SAFE_INTEGER
+  root.min = Number.MIN_SAFE_INTEGER
   while(stack.length) {
     let node = stack.pop()
     if(node.val <= node.min || node.val >= node.max) return false // 越界了
