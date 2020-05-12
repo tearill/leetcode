@@ -1,52 +1,31 @@
-# 最小栈
-- leetcode👉https://leetcode-cn.com/problems/min-stack/
+# 最小栈  
+leetcode👉https://leetcode-cn.com/problems/min-stack/  
 
-- 数组的操作
-  1. push pop 入栈出栈操作
-  只在栈顶部 FILO
-  2. unshift shift 队列操作
-  FIFO
-  CPU 的底层
-  写代码，放音乐，聊天
-  进程，分时分片
-  CPU计算 分时 运行时钟 
+设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
 
-- 程序是怎么运行的？ 程序会崩溃
-  代码文本 文件系统fs
-  a.c 编译器 a.o 可被执行的程序文件
-  内存 I/O 
-  CPU 分配空间 成为独立的进程
-  365？
-  排队 空间不够
-  进程三个状态
-  执行 就绪 阻塞
-  顺序执行  
-  代码是程序 
+push(x) —— 将元素 x 推入栈中  
+pop() —— 删除栈顶的元素  
+top() —— 获取栈顶元素  
+getMin() —— 检索栈中的最小元素  
+```js
+输入：
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
 
-- 程序崩溃？
-  CPU分时分片，切换操作
-  Tomcat 独立的进程 
-  进程切换消耗很大
-  线程 可以被独立运行的 
-  web 
-  Tomcat 多线程
-  分布式
+输出：
+[null,null,null,null,-3,null,0,-2]
 
-1. 冯诺依曼原理
-   代码 文件 -> compile -> 可执行文件 文件系统
-2. CPU分时分片
-   执行可执行文件
-   产生进程 由操作系统负责调度 
-   并行 多个进程在由CPU切换执行 
-3. 进程切换消耗很大
-   产生进程
-   *.java *.javac 
-   启动多线程 
-4. Tomcat
-   每个访问者new 一个线程
-   每个线程有独立的资源，内存，占据越来越多的内存空间，不释放，处于阻塞状态
-   - 分配的线程数到达了Tomcat的上限
-   - 线程为了就绪，分配内存，当分配的内存达到物理服务器的上限时，也会死
-5. 分布式的概念
-   nginx 动态扩容
-   加服务器 负载均衡
+解释：
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+```
+
+1. 当一个元素要入栈时，取当前辅助栈的栈顶存储的最小值，与当前元素比较得出最小值，将这个最小值插入辅助栈中  
+2. 当一个元素要出栈时，把辅助栈的栈顶元素也一并弹出  
+3. 在任意一个时刻，栈内元素的最小值就存储在辅助栈的栈顶元素中  

@@ -11,23 +11,23 @@ function MinStack() {
     this.min = Number.MAX_VALUE;
 }
 
-MinStack.prototype.push = function(x) {
-    if(x < this.min) {
+MinStack.prototype.push = function (x) {
+    if (x < this.min) {
         this.min = x;
-    } 
+    }
     return this.stack.push(x);
 }
-MinStack.prototype.pop = function() {
+MinStack.prototype.pop = function () {
     const item = this.stack.pop();
     return item;
 }
-MinStack.prototype.top = function() {
-    return this.stack[this.stack.length - 1 ]; 
+MinStack.prototype.top = function () {
+    return this.stack[this.stack.length - 1];
 }
-MinStack.prototype.getMin = function() {
+MinStack.prototype.getMin = function () {
     return this.min;
 }
-    MinStack.prototype.toString = function() {
+MinStack.prototype.toString = function () {
     return this.stack.join(',');
 }
 
