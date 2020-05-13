@@ -20,17 +20,17 @@ a3.right = a5
  * @return {number[][]}
  */
 
- // 迭代 + 队列
-var levelOrder = function(root) {
+// 迭代 + 队列
+var levelOrder = function (root) {
   let result = [] // 存放遍历结果
-  if (root === null) return result
+  if (!root) return result
   let queue = [root] // 队列存放每层的结点
   let level = 0 // 当前层次
-  while(queue.length) {
+  while (queue.length) {
     result[level] = [] // 每层的遍历结果
     let nodeNum = queue.length // 每层的结点数量
     // console.log(nodeNum)
-    for(let i = 0; i < nodeNum.length; i++) {
+    for (let i = 0; i < nodeNum.length; i++) {
       let node = queue.shift()
       result[level].push(node.val)
       node.left && queue.push(node.left)

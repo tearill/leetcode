@@ -21,20 +21,16 @@ a3.right = a5
  */
 
 // DFS 深度优先法
-var levelOrder = function(root) {
+var levelOrder = function (root) {
   let result = [] // 结果数组
   if (!root) return result // 树为空时直接返回
   function walk(node, level) { // 辅助函数遍历每一层的结点
-    if(result.length === level) {
+    if (result.length === level) {
       result.push([]) // 初始化定型每一层的数组
     }
     result[level].push(node.val) // 每一层都是一个数组
-    if(node.left) {
-      walk(node.left, level + 1) // 访问左结点下一层
-    }
-    if(node.right) {
-      walk(node.right, level + 1) // 访问右节点下一层
-    }
+    node.left && walk(node.left, level + 1) // 访问左结点下一层
+    node.right && walk(node.right, level + 1) // 访问右节点下一层
   }
   walk(root, 0)
   return result
